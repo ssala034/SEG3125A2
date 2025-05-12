@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" style="--customColor: #0044ff;">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steven Mu</title>
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- Glidejs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header" id="home">
+    <nav class="nav">
+      <div class="navigation container">
+        <div class="logo">
+          <h1>Shuaib Salad</h1>
+        </div>
+
+        <div class="menu">
+          <div class="top-nav">
+            <div class="logo">
+              <h1>Shuaib Salad</h1>
+            </div>
+            <div class="close">
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#teams">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <img src="images/abstract2.jpeg" alt="Header Image">
+    <div class="hero">
+      <h3>Hello, my name is</h3>
+      <h1>Steven Mu</h1>
+      <h4>And I'm a <span id="type1" class="typeit">Computer Engineering Student</span></h4>
+      <a href="#teams">My Projects</a>
+    </div>
+
+    <div class="icons">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="title">
+      <h1>About Me</h1>
+    </div>
+    <div class="about-center container">
+      <div class="left">
+        <img src="images/pfp2.jpg" alt="Profile Picture">
+      </div>
+      <div class="right">
+        <p>Hello, my name is Steven Mu, and I'm a student at the University of Waterloo, studying computer engineering.</p>
+        <p>When I'm not working on my degree, I train & compete as a competitive track and field athlete, specializing in the jumps. If you would like to see my resume, please click the button below!</p>
+        <a href="images/resume.pdf" target="_blank" class="btn">Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="teams">
+    <div class="title">
+      <h1>My Projects</h1>
+    </div>
+    <div class="projects">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="project">
+                <img src="images/sleepstopgod.png" alt="SleepStop">
+                <h3>SleepStop</h3>
+                <p>Using computer vision software paired with a raspberry pi, SleepStop helps prevent fatigued driving.</p>
+                <a href="https://devpost.com/software/car-safety-for-now-placeholder" target="_blank">Learn More</a>
+              </div>
+            </li>
+            <!-- Add more projects here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="title">
+      <h1>Contact Me</h1>
+    </div>
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Created by Steven Mu | © 2024 All rights reserved</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/7.0.4/typeit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
