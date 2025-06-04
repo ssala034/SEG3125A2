@@ -1,0 +1,38 @@
+[
+  {
+    "name": "James",
+    "subject": "English",
+    "detail": "Award winning poetry and prose, with a focus on modern literature.",
+    "image": "./profile.jpg"
+  },
+  {
+    "name": "Leo",
+    "subject": "French",
+    "detail": "French literature and culture, exploring classic and contemporary works.",
+    "image": "./profile.jpg"
+  },
+  {
+    "name": "Carl",
+    "subject": "Computing",
+    "detail": "Explore data structures and algorithms, with a focus on practical applications.",
+    "image": "./profile.jpg"
+  },
+  {
+    "name": "Samantha",
+    "subject": "Physics",
+    "detail": "Fundamental principles of physics, from classical mechanics to quantum theory.",
+    "image": "./profile.jpg"
+  },
+  {
+    "name": "Alicia",
+    "subject": "Biology",
+    "detail": "Study of living organisms, their structure, function, growth, and evolution.",
+    "image": "./profile.jpg"
+  },
+  {
+    "name": "Michael",
+    "subject": "Chemistry",
+    "detail": "Chemical reactions and properties, with a focus on organic and inorganic chemistry.",
+    "image": "./profile.jpg"
+  }
+]
