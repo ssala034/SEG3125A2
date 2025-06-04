@@ -4,8 +4,8 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
-// import Pricing from './pages/pricing';
-// import PricingPage from './components/PricingPage.tsx';
+import Pricing from './pages/pricing';
+import {Nav} from "react-bootstrap";
 
 function App() {
   return (
@@ -40,9 +40,12 @@ function App() {
             <Route path="/contact" element={
                 <Contact />
             } />
-              {/*<Route path="/pricing" element={*/}
-              {/*    <Pricing />*/}
-              {/*} />*/}
+              <Route path="/pricing" element={
+                  <div>
+                      <Pricing />
+                  </div>
+
+              } />
 
           </Routes>
         </div>
