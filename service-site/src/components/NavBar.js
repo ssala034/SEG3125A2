@@ -14,17 +14,12 @@ const Header = () => {
   }
   return (
     <section className='h-wrapper'>
-        <div className='flexCenter paddings innerWidth h-container'> 
+        <div className='paddings innerWidth h-container'f> 
             <img src={logo} alt='logo' width={100}/>
-
-            <OutsideClickHandler
-            onOutsideClick={() =>{
+            <OutsideClickHandler onOutsideClick={() =>{
               setMenuOpened(false)
-            }}
-            >
-            <div className='flexCenter h-menu'
-            style={getMenuStyles (menuOpened) }
-            >
+            }}>
+            <div className='h-menu' style={getMenuStyles (menuOpened) }>
                 <a href='#'>Residencies</a>
                 <a href='#'>Our Value </a>
                 <a href='#'>Contact Us </a>
