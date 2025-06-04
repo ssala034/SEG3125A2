@@ -1,0 +1,46 @@
+.hero-title {
+  font-size: 2.5rem;
+  color: #222;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+.hero-search {
+  background: #f4f0fa;
+  border-radius: 24px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.hero-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.hero-search .input-group-text {
+  background: transparent;
+  border: none;
+}
+
+.hero-img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50% / 40%;
+  border: 2px solid #333;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+}
+
+.hero-img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50% / 40%;
+  border: 2px solid #333;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+}
