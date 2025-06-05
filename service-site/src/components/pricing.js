@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 const PricingSection = () => {
     return (
@@ -97,8 +99,18 @@ const PricingCard = ({
                         {description}
                     </p>
                     <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-                    <a
-                        href="/#"
+                    {/*<a*/}
+                    {/*    href="/#"*/}
+                    {/*    className={` ${*/}
+                    {/*        active*/}
+                    {/*            ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90"*/}
+                    {/*            : "block w-full rounded-md border border-stroke bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3"*/}
+                    {/*    } `}*/}
+                    {/*>*/}
+                    {/*    {buttonText}*/}
+                    {/*</a>*/}
+                    <Link
+                        to={`/appointment?plan=${encodeURIComponent(type)}`}
                         className={` ${
                             active
                                 ? "block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90"
@@ -106,7 +118,7 @@ const PricingCard = ({
                         } `}
                     >
                         {buttonText}
-                    </a>
+                    </Link>
                     <div>
             <span className="absolute right-0 top-7 z-[-1]">
               <svg
