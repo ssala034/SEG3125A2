@@ -2,6 +2,9 @@ import Picker from '../components/datePicker';
 import React, { useState } from 'react';
 import InputField from '../components/Input';
 import Button from '@mui/material/Button';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 function AppointmentPage() {
     const [name, setName] = useState('');
@@ -10,7 +13,11 @@ function AppointmentPage() {
     const [email, setEmail] = useState('');
     const [showMessage, setShowMessage] = useState(false);
     const messageRef = React.useRef(null);
-    const [subject, setSubject] = useState(''); // no default
+    const [subject, setSubject] = useState('');
+    const [searchParams] = useSearchParams();
+    const selectedPlan = searchParams.get('plan');
+    const [tier, setTier] = useState('');
+
 
     const handleSubmit = () => {
         if (
@@ -18,6 +25,7 @@ function AppointmentPage() {
             email.trim() &&
             reason.trim() &&
             subject.trim() &&
+            tier.trim() &&
             selectedDate
         ) {
             setShowMessage(true);
@@ -27,10 +35,16 @@ function AppointmentPage() {
         }
     };
 
+    useEffect(() => {
+        if (selectedPlan) {
+            setTier(selectedPlan);
+        }
+    }, [selectedPlan]);
+
     return (
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '50px' }}>
-            <div style={{ maxWidth: '400px', margin: 'auto', padding: '2.5rem', outline: '1px solid grey' }}>
-                <h1 style={{ textAlign: 'center', paddingBottom: '0.5rem' }}>Book an Appointment</h1>
+            <div style={{maxWidth: '400px', margin: 'auto', padding: '2.5rem', outline: '1px solid grey'}}>
+                <h1 style={{textAlign: 'center', paddingBottom: '0.5rem'}}>Book an Appointment</h1>
 
                 <InputField
                     label="Full Name"
@@ -51,7 +65,7 @@ function AppointmentPage() {
                     placeholder="e.g. Exam prep, Deep learning"
                 />
 
-                <h2 style={{ padding: '0.5rem 0' }}>Choose your Subject</h2>
+                <h2 style={{padding: '0.5rem 0'}}>Choose your Subject</h2>
                 <select
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
@@ -69,8 +83,26 @@ function AppointmentPage() {
                     <option value="biology">Biology</option>
                 </select>
 
-                <div style={{ marginTop: '1rem' }}>
-                    <label style={{ display: 'block', width: '100%' }}>Select Date & Time</label>
+
+                <h2 style={{padding: '0.5rem 0'}}>Choose your package</h2>
+                <select
+                    value={tier}
+                    onChange={(e) => setTier(e.target.value)}
+                    style={{
+                        width: '100%',
+                        outline: '1px solid grey',
+                        padding: '0.5rem',
+                        marginBottom: '1rem',
+                    }}
+                >
+                    <option value="">-- Select a package --</option>
+                    <option value="Per Session">Single</option>
+                    <option value="10 Class Package">10 Course Package</option>
+                    <option value="Semester Package">Semester Package</option>
+                </select>
+
+                <div style={{marginTop: '1rem'}}>
+                    <label style={{display: 'block', width: '100%'}}>Select Date & Time</label>
                     {/*<Picker*/}
                     {/*    value={selectedDate}*/}
                     {/*    onChange={(val) => setSelectedDate(val.value)}*/}
@@ -86,7 +118,7 @@ function AppointmentPage() {
 
                 </div>
 
-                <div style={{ marginTop: '1.5rem' }}>
+                <div style={{marginTop: '1.5rem'}}>
                     <Button variant="contained" onClick={handleSubmit}>
                         Submit
                     </Button>
