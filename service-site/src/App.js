@@ -5,7 +5,8 @@ import Services from './components/Services';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Pricing from './pages/pricing';
-import {Nav} from "react-bootstrap";
+import Appoint from './pages/Appointment';
+// import {Nav} from "react-bootstrap";
 
 function App() {
   return (
@@ -46,6 +47,13 @@ function App() {
                   </div>
 
               } />
+              <Route path="/appointment" element={
+                  <div>
+                      <Appoint />
+                  </div>
+
+              } />
+
 
           </Routes>
         </div>
