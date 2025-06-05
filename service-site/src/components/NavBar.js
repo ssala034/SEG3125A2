@@ -22,10 +22,10 @@ const Header = () => {
             <div className='h-menu' style={getMenuStyles (menuOpened) }>
                 <a href='#'>Residencies</a>
                 <a href='#'>Our Value </a>
-                <a href='#'>Contact Us </a>
+                <a href='#'>Pricing </a>
                 <a href='#'>Get Started</a>
                 <button className='button'>
-                    <a href=''>Contact</a>
+                    <a href='http://localhost:3000/contact#'>Contact</a>
                 </button>
             </div>
             </OutsideClickHandler>
