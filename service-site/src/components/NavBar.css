@@ -26,13 +26,13 @@
 }
 
 /*Button for whole site*/
-.menu-icon{
+.home-icon{
     display: none;
 
 }
 /*generally dispaly is none but @ certain screen size it changes */
 @media (max-width: 768px) {
-    .menu-icon{
+    .home-icon{
         display: block;
     }
     .h-menu{

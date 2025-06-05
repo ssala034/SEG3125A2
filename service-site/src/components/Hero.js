@@ -10,7 +10,7 @@ const Hero = () => (
             <div className="hero-center my-5">
                 <h1 className="hero-title">Discover More Suitable<br/>Learning Support</h1>
                 <h4 className="hero-subtitle">Master the why, not just the what</h4>
-                <a href="#" className="button">Book an Appointment</a>
+                <a href="/appointment" className="button">Book an Appointment</a>
             </div>
         </Col>
         <Col md={4} className="text-center">

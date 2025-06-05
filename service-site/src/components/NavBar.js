@@ -15,22 +15,24 @@ const Header = () => {
   return (
     <section className='h-wrapper'>
         <div className='paddings innerWidth h-container'f> 
-            <img src={logo} alt='logo' width={100}/>
+            <a href="/">
+              <img src={logo} alt='logo' width={100}/>
+            </a>
             <OutsideClickHandler onOutsideClick={() =>{
               setMenuOpened(false)
             }}>
             <div className='h-menu' style={getMenuStyles (menuOpened) }>
-                <a href='#'>Residencies</a>
-                <a href='#'>Our Value </a>
-                <a href='#'>Pricing </a>
-                <a href='#'>Get Started</a>
+                <a href='/'>Home</a>
+                <a href='/services'>Services </a>
+                <a href='/appointment'>Book Appointment</a>
+                <a href='/pricing'>Explore Packages</a>
                 <button className='button'>
-                    <a href='http://localhost:3000/contact#'>Contact</a>
+                    <a href='/contact'>Contact</a>
                 </button>
             </div>
             </OutsideClickHandler>
 
-            <div className="menu-icon" onClick={()=> setMenuOpened((prev) =>! prev)}>
+            <div className="home-icon" onClick={()=> setMenuOpened((prev) =>! prev)}>
               <BiMenuAltRight size={30}/>
             </div>
 
