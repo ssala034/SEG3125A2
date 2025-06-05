@@ -43,7 +43,7 @@ function AppointmentPage() {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '50px' }}>
-            <div style={{maxWidth: '400px', margin: 'auto', padding: '2.5rem', outline: '1px solid grey'}}>
+            <div style={{minWidth: '500px', margin: 'auto', padding: '1.5rem', outline: '1px solid grey'}}>
                 <h1 style={{textAlign: 'center', paddingBottom: '0.5rem'}}>Book an Appointment</h1>
 
                 <InputField
