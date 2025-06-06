@@ -30,7 +30,7 @@ const Header = () => {
                 <a href='/appointment'>Book Appointment</a>
                 <a href='/pricing'>Explore Packages</a>
                 <button className='button'>
-                    <a href='http://localhost:3000/contact#'>Contact</a>
+                    <a href='/contact'>Contact</a>
                 </button>
             </div>
             </OutsideClickHandler>
