@@ -9,7 +9,7 @@ const data = [
   },
   {
     icon: <FaGraduationCap />,
-    heading: "Empowerement ",
+    heading: "Empowering Student Life",
     detail: "blah"  
   },
   {
