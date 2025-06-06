@@ -31,7 +31,7 @@ function App() {
 
           {/* Other Routes */}
           <Route path="/contact" element={<Contact />} />
-          <Route path="/pricing" element={<PricingSection />} />
+          <Route path="/pricings" element={<PricingSection />} />
           <Route path="/appointment" element={<Appoint />} />
         </Routes>
 
