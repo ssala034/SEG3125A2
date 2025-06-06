@@ -14,17 +14,14 @@ const Header = () => {
   }
   return (
     <section className='h-wrapper'>
-        <div className='flexCenter paddings innerWidth h-container'> 
-            <img src={logo} alt='logo' width={100}/>
-
-            <OutsideClickHandler
-            onOutsideClick={() =>{
+        <div className='paddings innerWidth h-container'f> 
+            <a href="/">
+              <img src={logo} alt='logo' width={100}/>
+            </a>
+            <OutsideClickHandler onOutsideClick={() =>{
               setMenuOpened(false)
-            }}
-            >
-            <div className='flexCenter h-menu'
-            style={getMenuStyles (menuOpened) }
-            >
+            }}>
+            <div className='h-menu' style={getMenuStyles (menuOpened) }>
                 <a href='/'>Home</a>
                 <a href='/services'>Services </a>
                 <a href='/appointment'>Book Appointment</a>
@@ -35,7 +32,7 @@ const Header = () => {
             </div>
             </OutsideClickHandler>
 
-            <div className="menu-icon" onClick={()=> setMenuOpened((prev) =>! prev)}>
+            <div className="home-icon" onClick={()=> setMenuOpened((prev) =>! prev)}>
               <BiMenuAltRight size={30}/>
             </div>
 
@@ -47,5 +44,4 @@ const Header = () => {
 }
 
 export default Header;
-
 

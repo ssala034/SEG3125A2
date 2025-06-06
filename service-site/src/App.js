@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-// import Value from './components/Value';
+import Value from './components/Value';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
@@ -14,10 +14,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Always visible Navbar */}
         <NavBar />
         
-        {/* Routes for different pages */}
         <Routes>
           {/* Home Route */}
           <Route path="/" element={
@@ -25,7 +23,7 @@ function App() {
               <div className="white-gradient"/>
               <Hero />
               <Services />
-              {/*<Value />*/}
+              <Value/>
             </>
           } />
 
@@ -35,7 +33,6 @@ function App() {
           <Route path="/appointment" element={<Appoint />} />
         </Routes>
 
-        {/* Always visible Footer */}
         <Footer />
       </div>
     </Router>
