@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Value from './components/Value';
+// import Value from './components/Value';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
@@ -24,7 +24,7 @@ function App() {
               <div className="white-gradient"/>
               <Hero />
               <Services />
-              <Value />
+              {/*<Value />*/}
             </>
           } />
 
