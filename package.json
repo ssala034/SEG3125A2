@@ -3,9 +3,14 @@
     "leaflet": "^1.9.4",
     "ol": "^10.5.0",
     "react-leaflet": "^5.0.0",
+    "react-scripts": "^5.0.1",
     "tailgrids": "^2.3.0"
   },
   "devDependencies": {
     "tailwindcss": "^4.1.8"
-  }
+  },
+  "scripts": {
+  "build": "react-scripts build",
+  "start": "react-scripts start"
+}
 }
