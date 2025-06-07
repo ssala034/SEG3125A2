@@ -14,7 +14,7 @@ const Header = () => {
   }
   return (
     <section className='h-wrapper'>
-        <div className='paddings innerWidth h-container'f> 
+        <div className='paddings innerWidth h-container'>
             <a href="/">
               <img src={logo} alt='logo' width={100}/>
             </a>
