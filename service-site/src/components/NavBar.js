@@ -1,5 +1,5 @@
 import React, {useState} from 'react' 
-import logo from '../assets/icon-black.png'
+import logo from '../assets/icon-black-final.png'
 import './NavBar.css'
 import {BiMenuAltRight} from 'react-icons/bi'
 import OutsideClickHandler from 'react-outside-click-handler'
