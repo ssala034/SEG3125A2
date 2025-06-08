@@ -105,7 +105,7 @@ function AppointmentPage() {
                     className="appointment-select"
                 >
                     <option value="">-- Select a subject --</option>
-                    <option value="Math">Math</option>
+                    <option value="Mathematics">Mathematics</option>
                     <option value="Physics">Physics</option>
                     <option value="Chemistry">Chemistry</option>
                     <option value="Biology">Biology</option>
