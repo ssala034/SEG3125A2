@@ -71,7 +71,7 @@ function Contact() {
                                 rows={4}
                                 className="contact-textarea"
                             />
-                            <button type="submit" className="contact-button">
+                            <button className="contact-button">
                                 Send Message
                             </button>
                         </form>
