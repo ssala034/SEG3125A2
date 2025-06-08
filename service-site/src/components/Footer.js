@@ -1,12 +1,15 @@
 import React from 'react'
 import './Footer.css'
+import logo from '../assets/logo.png'
 const Footer = () => {
   return (
     <section className="f-wrapper">
         <div className="paddings innerWidth flexCenter f-container">
             {/*left side */}
             <div className="flexColStart f-left">
-                <img src='./logo192.png' alt='' width={120}/>
+                <a href="/">
+                    <img src={logo} alt='Footerlogo' width={100}/>
+                </a>
                 <span className="secondaryText">
                     Our visions is to make all people <br/>
                     be more curious and love learning.
@@ -17,9 +20,9 @@ const Footer = () => {
                 <span className='primaryText'>Information</span>
                 <span className='secondaryText'> 75 Laurier Ave E, Ottawa, CA</span>
                 <div className="flexCenter f-menu">
-                    <span>Services</span>
-                    <span>Product</span>
-                    <span>About Us</span>
+                    <a href="/about" className="f-link">About Us</a>
+                    <a href="/pricings" className="f-link">Packages</a>
+                    <a href="/contact" className="f-link">Contact</a>
                 </div>
             </div>
 

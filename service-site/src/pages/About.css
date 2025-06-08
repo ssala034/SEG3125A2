@@ -1,0 +1,76 @@
+.aboutus-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #33475b;
+  background: #fff;
+}
+
+.aboutus-mission, .aboutus-designer {
+  margin-bottom: 50px;
+}
+.aboutus-story {
+  margin-bottom: 20px;
+}
+
+.aboutus-mission-content, .aboutus-story-content, .aboutus-designer-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutus-mission-text, .aboutus-story-text, .aboutus-designer-text {
+  flex: 1 1 300px;
+}
+
+.aboutus-mission-image, .aboutus-story-image, .aboutus-designer-image {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutus-mission-image img, .aboutus-story-image img, .aboutus-designer-image img {
+  width: 220px;
+  border-radius: 24px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.aboutus-designer-image img {
+  width: 340px;    /* Increase this value as needed */
+  height: auto;    /* Keeps the aspect ratio */
+  border-radius: 24px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.aboutus-signatures {
+  font-size: 0.9em;
+  color: #b0b0b0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.primaryText {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #204080;
+  margin-bottom: 4px; 
+  display: block;
+}
+
+.aboutus-mission-text p,
+.aboutus-story-text p,
+.aboutus-designer-text p {
+    margin-top: 4px; 
+}

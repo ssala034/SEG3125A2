@@ -22,7 +22,7 @@ const Header = () => {
               setMenuOpened(false)
             }}>
             <div className='h-menu' style={getMenuStyles (menuOpened) }>
-                <a href='/'>Home</a>
+                <a href='/about'>About Us</a>
                 <a href='/appointment'>Book Appointment</a>
                 <a href='/pricings'>Explore Packages</a>
                 <button className='button'>

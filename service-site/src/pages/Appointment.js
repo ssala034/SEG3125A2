@@ -1,10 +1,10 @@
+import React, { useState, useRef, useEffect } from 'react';
 import Picker from '../components/datePicker';
-import React, { useState } from 'react';
 import InputField from '../components/Input';
 import Button from '@mui/material/Button';
 import { useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import './Appointment.css';
+import instructorsData from '../utils/slider.json'; 
 
 function AppointmentPage() {
     const [name, setName] = useState('');
@@ -12,20 +12,59 @@ function AppointmentPage() {
     const [selectedDate, setSelectedDate] = useState(null);
     const [email, setEmail] = useState('');
     const [showMessage, setShowMessage] = useState(false);
-    const messageRef = React.useRef(null);
+    const messageRef = useRef(null);
     const [subject, setSubject] = useState('');
     const [searchParams] = useSearchParams();
     const selectedPlan = searchParams.get('plan');
+    const selectedSubject = searchParams.get('subject');
+    const selectedInstructor = searchParams.get('instructor');
     const [tier, setTier] = useState('');
+    const [instructor, setInstructor] = useState('');
 
+    const instructorSubjectMap = {};
+    instructorsData.forEach(item => {
+        if (item.instructor && item.subject) {
+            if (!instructorSubjectMap[item.instructor]) {
+                instructorSubjectMap[item.instructor] = [];
+            }
+            if (!instructorSubjectMap[item.instructor].includes(item.subject)) {
+                instructorSubjectMap[item.instructor].push(item.subject);
+            }
+        }
+    });
+    
+
+    useEffect(() => {
+        if (selectedPlan) setTier(selectedPlan);
+    }, [selectedPlan]);
+
+    useEffect(() => {
+        if (selectedSubject) setSubject(selectedSubject);
+    }, [selectedSubject]);
+
+    useEffect(() => {
+        if (selectedInstructor) setInstructor(selectedInstructor);
+    }, [selectedInstructor]);
 
     const handleSubmit = () => {
+        // Check if instructor can teach the selected subject
+        if (
+            instructor &&
+            subject &&
+            instructorSubjectMap[instructor] &&
+            !instructorSubjectMap[instructor].includes(subject)
+        ) {
+            alert(`${instructor} does not teach ${subject}. Please select a valid subject/instructor combination.`);
+            return;
+        }
+
         if (
             name.trim() &&
             email.trim() &&
             reason.trim() &&
             subject.trim() &&
             tier.trim() &&
+            instructor.trim() &&
             selectedDate
         ) {
             setShowMessage(true);
@@ -35,65 +74,51 @@ function AppointmentPage() {
         }
     };
 
-    useEffect(() => {
-        if (selectedPlan) {
-            setTier(selectedPlan);
-        }
-    }, [selectedPlan]);
-
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '50px' }}>
-            <div style={{minWidth: '500px', margin: 'auto', padding: '1.5rem', outline: '1px solid grey'}}>
-                <h1 style={{textAlign: 'center', paddingBottom: '0.5rem'}}>Book an Appointment</h1>
+        <div className="appointment-container">
+            <div className="appointment-form-wrapper">
+                <h1 className="appointment-title">Book an Appointment</h1>
 
                 <InputField
-                    label="Full Name"
+                    label={<span className="appointment-section-title">Full Name</span>}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
                 />
                 <InputField
-                    label="Email"
+                    label={<span className="appointment-section-title">Email</span>}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="example@example.com"
                 />
                 <InputField
-                    label="Reason for Booking"
+                    label={<span className="appointment-section-title">Reason for Booking</span>}
                     value={reason}
                     onChange={(e) => setReason(e.target.value)}
                     placeholder="e.g. Exam prep, Deep learning"
                 />
 
-                <h2 style={{padding: '0.5rem 0'}}>Choose your Subject</h2>
+                <h2 className="appointment-section-title">Choose your Subject</h2>
                 <select
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    style={{
-                        width: '100%',
-                        outline: '1px solid grey',
-                        padding: '0.5rem',
-                        marginBottom: '1rem',
-                    }}
+                    className="appointment-select"
                 >
                     <option value="">-- Select a subject --</option>
-                    <option value="math">Math</option>
-                    <option value="physics">Physics</option>
-                    <option value="chemistry">Chemistry</option>
-                    <option value="biology">Biology</option>
+                    <option value="Math">Math</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Computing">Computer Science</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
                 </select>
 
-
-                <h2 style={{padding: '0.5rem 0'}}>Choose your package</h2>
+                <h2 className="appointment-section-title">Choose your package</h2>
                 <select
                     value={tier}
                     onChange={(e) => setTier(e.target.value)}
-                    style={{
-                        width: '100%',
-                        outline: '1px solid grey',
-                        padding: '0.5rem',
-                        marginBottom: '1rem',
-                    }}
+                    className="appointment-select"
                 >
                     <option value="">-- Select a package --</option>
                     <option value="Per Session">Single</option>
@@ -101,44 +126,44 @@ function AppointmentPage() {
                     <option value="Semester Package">Semester Package</option>
                 </select>
 
-                <div style={{marginTop: '1rem'}}>
-                    <label style={{display: 'block', width: '100%'}}>Select Date & Time</label>
-                    {/*<Picker*/}
-                    {/*    value={selectedDate}*/}
-                    {/*    onChange={(val) => setSelectedDate(val.value)}*/}
-                    {/*/>*/}
+                <h2 className="appointment-section-title">Choose your Instructor</h2>
+                <select
+                    value={instructor}
+                    onChange={(e) => setInstructor(e.target.value)}
+                    className="appointment-select"
+                >
+                    <option value="">-- Select an instructor --</option>
+                    <option value="James">James</option>
+                    <option value="Leo">Leo</option>
+                    <option value="Samantha">Samantha</option>
+                    <option value="Carl">Carl</option>
+                    <option value="Alicia">Alicia</option>
+                    <option value="Michael">Michael</option>
+                    <option value="Sarah">Sarah</option>
+                </select>
 
-
-                    <Picker
-                        value={selectedDate}
-                        onChange={(event) => {
-                            setSelectedDate(event.value);  // this is a string
-                        }}
-                    />
-
+                <div className="appointment-picker-section">
+                    <label className="appointment-section-title">Select Date & Time</label>
+                    <div className="appointment-picker-wrapper">
+                        <Picker
+                            value={selectedDate}
+                            onChange={(event) => {
+                                setSelectedDate(event.value);
+                            }}
+                        />
+                    </div>
                 </div>
 
-                <div style={{marginTop: '1.5rem'}}>
+                <div className="appointment-submit-section">
                     <Button variant="contained" onClick={handleSubmit}>
                         Submit
                     </Button>
 
                     <div
                         ref={messageRef}
-                        style={{
-                            maxHeight: showMessage ? '100px' : '0px',
-                            opacity: showMessage ? 1 : 0,
-                            overflow: 'hidden',
-                            backgroundColor: 'lightgreen',
-                            color: 'white',
-                            padding: showMessage ? '1rem' : '0 1rem',
-                            borderRadius: '5px',
-                            marginTop: '1rem',
-                            textAlign: 'center',
-                            transition: 'all 0.5s ease'
-                        }}
+                        className={`appointment-success-message${showMessage ? '' : ' hide'}`}
                     >
-                        Submission Successful
+                        Submission Successful <br /> We will contact you soon!
                     </div>
                 </div>
             </div>

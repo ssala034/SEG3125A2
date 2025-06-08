@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'; // <-- import useNavigate
 import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
 import "swiper/css"
 import "./Services.css"
@@ -6,6 +7,7 @@ import data from "../utils/slider.json"
 import { sliderSettings } from '../utils/common'
 
 const Services = () => {
+  const navigate = useNavigate(); 
   return (
     <section className="r-wrapper">
         <div className="paddings innerWidth r-container">
@@ -19,7 +21,10 @@ const Services = () => {
             {
               data.map((card,i)=>(
                   <SwiperSlide key={i}>
-                    <div className="flexColStart r-card">
+                  <div className="flexColStart r-card" style={{ cursor: 'pointer' }} onClick={() => navigate(
+                        `/appointment?subject=${encodeURIComponent(card.subject)}&instructor=${encodeURIComponent(card.name)}`
+                  )}>
+                      
                         <img src={card.image} alt='home'/>
                         <span className="secondaryText r=price">
                           <span>{card.subject}</span>

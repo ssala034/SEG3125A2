@@ -1,0 +1,107 @@
+.appointment-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.appointment-form-wrapper {
+    min-width: 500px;
+    margin: auto;
+    padding: 1.5rem;
+    outline: 1px solid grey;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #0001;
+}
+
+.appointment-title {
+    text-align: center;
+    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a237e;
+    margin-bottom: 1.5rem;
+}
+
+.appointment-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.appointment-select,
+.appointment-input {
+    width: 100%;
+    outline: 1px solid grey;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fafbfc;
+}
+
+.appointment-section-title {
+    display: block;
+    padding: 0.5rem 0 0.25rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a237e;
+    margin-bottom: 0.25rem;
+}
+
+.appointment-picker-section {
+    margin-top: 1rem;
+}
+
+.appointment-picker-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.appointment-submit-section {
+    margin-top: 1.5rem;
+}
+
+.appointment-success-message {
+    max-height: 100px;
+    opacity: 1;
+    overflow: hidden;
+    background-color: lightgreen;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    transition: all 1s ease;
+}
+
+.appointment-success-message.hide {
+    max-height: 0px;
+    opacity: 0;
+    padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+    .appointment-form-wrapper {
+        min-width: unset;
+        width: 95vw;
+        padding: 1rem;
+    }
+}
+
+.appointment-picker-wrapper {
+    width: 100%;
+}
+
+.appointment-picker-wrapper input,
+.appointment-picker-wrapper .MuiInputBase-root {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+    text-align: left;
+}

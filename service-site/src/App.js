@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 // import Pricing from './pages/pricing';
 import PricingSection from './components/pricing';
 import Appoint from './pages/Appointment';
+import About from './pages/About';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricings" element={<PricingSection />} />
           <Route path="/appointment" element={<Appoint />} />
+          <Route path="/about" element={<About/>} />
+          
         </Routes>
 
         <Footer />
